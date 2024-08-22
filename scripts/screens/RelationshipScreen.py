@@ -576,7 +576,7 @@ class RelationshipScreen(Screens):
             elif (
                 len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate
             ):
-                col2 += f"{self.the_cat.name}'s mate\n"
+                col2 += f"mate: {self.the_cat.name}\n"
             else:
                 col2 += "mate: none\n"
 
@@ -613,10 +613,10 @@ class RelationshipScreen(Screens):
                         col2 += "related: sibling (littermate)"
                     else:
                         col2 += "related: sibling"
-                elif not game.clan.clan_settings[
-                    "first cousin mates"
-                ] and self.inspect_cat.is_cousin(self.the_cat):
-                    col2 += "related: cousin"
+                #elif not game.clan.clan_settings[
+                    #"first cousin mates"
+                #] and self.inspect_cat.is_cousin(self.the_cat):
+                    #col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = pygame_gui.elements.UITextBox(
                 col2,
