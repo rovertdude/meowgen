@@ -573,10 +573,18 @@ class RelationshipScreen(Screens):
                 and self.the_cat.ID not in self.inspect_cat.mate
             ):
                 col2 += "has a mate\n"
-            elif (
-                len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate
+
+            if (
+                len(self.the_cat.mate) > 0 
+                and self.inspect_cat.ID in self.the_cat.mate 
+                and self.inspect_cat.is_sibling(self.the_cat)
             ):
-                col2 += f"mate: {self.the_cat.name}\n"
+                col2 += f"mates\nrelated: sibling"
+            elif (
+                len(self.the_cat.mate) > 0 
+                and self.inspect_cat.ID in self.the_cat.mate
+            ):
+                col2 += f"mates\n"
             else:
                 col2 += "mate: none\n"
 
