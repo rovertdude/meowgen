@@ -2418,7 +2418,8 @@ class Cat:
 
         # Inheritance check
         if self.is_related(other_cat, first_cousin_mates):
-            return False
+            if first_cousin_mates):
+                return False
 
         # check exiled, outside, and dead cats
         if (self.dead != other_cat.dead) or self.outside or other_cat.outside:
